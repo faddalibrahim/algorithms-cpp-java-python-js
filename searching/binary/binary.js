@@ -7,13 +7,14 @@ function binarySearchRecursive(
   end = array.length - 1
 ) {
   let middle = Math.floor((start + end) / 2);
+  if (start > end) return -1;
 
   if (array[middle] === target) {
     return middle;
   } else if (array[middle] > target) {
     end = middle - 1;
     return binarySearchRecursive(array, target, start, end);
-  } else {
+  } else if (array[middle] < target) {
     start = middle + 1;
     return binarySearchRecursive(array, target, start, end);
   }
@@ -22,6 +23,7 @@ function binarySearchRecursive(
 console.log(binarySearchRecursive(array, 3)); // 0
 console.log(binarySearchRecursive(array, 6)); // 2
 console.log(binarySearchRecursive(array, 20)); // 6
+console.log(binarySearchRecursive(array, 200)); // -1
 
 function binarySearchIterative(
   array,
@@ -39,8 +41,11 @@ function binarySearchIterative(
       start = middle + 1;
     }
   }
+
+  return -1;
 }
 
 console.log(binarySearchIterative(array, 30)); // 9
 console.log(binarySearchIterative(array, 18)); // 5
 console.log(binarySearchIterative(array, 21)); // 7
+console.log(binarySearchIterative(array, 100)); // -1
