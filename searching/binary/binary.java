@@ -3,11 +3,15 @@ import java.lang.Math;
 
 public class Binary {
     
-    public static void main(String[] args){
+    public static void main(String[] args) {
+        
+        Binary binary = new Binary();
+        binary.recursiveSearch();
+        binary.iterativeSearch();
 
     }
 
-    public int recursive(int[] array, int target, int start, int end) {
+    public int recursiveSearch(int[] array, int target, int start, int end) {
         start = 0;
         end = array.length - 1;
 
@@ -26,7 +30,7 @@ public class Binary {
         }
     }
 
-    public int iterative(int[] array, int target, int start, int end) {
+    public int iterativeSearch(int[] array, int target, int start, int end) {
         start = 0;
         end = array.length - 1;
         while (start <= end) {
