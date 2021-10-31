@@ -19,6 +19,9 @@ const fib = (n) => {
  * keys -> argument to the function
  * value will be the return value
  *
+ * O(n)
+ * O(n)
+ *
  */
 
 const fibb = (n, memo = {}) => {
