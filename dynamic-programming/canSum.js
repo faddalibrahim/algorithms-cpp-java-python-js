@@ -22,10 +22,10 @@
 // O(n) using hash map
 // O(n) space complexity
 const canSum = (targetSum, numbers) => {
-  const obj = {};
+  const remainders = {};
   for (number of numbers) {
-    obj[number] = targetSum - number;
-    if (obj[number] in obj) return true;
+    remainders[number] = targetSum - number;
+    if (remainders[number] in remainders) return true;
   }
   return false;
 };
@@ -39,8 +39,14 @@ console.log(canSum(7, [1, 2, 3, 4, 6, 7, 8]));
 console.log(canSum(100, [1, 2, 3, 4, 6, 7, 8]));
 console.log(canSum(8, [1, 2, 3, 4, 6, 7, 8]));
 
-// const canSum = (targetSum, numbers) => {
+// using recursion
+const canSum = (targetSum, numbers) => {
+  if (targetSum === 0) return true;
 
-// }
+  for (let num of numbers) {
+    const remainder = targetSum - num;
+    if (canSum(remainder, numbers)) return true;
+  }
 
-//                12
+  return false;
+};
