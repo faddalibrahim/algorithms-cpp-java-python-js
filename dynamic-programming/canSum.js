@@ -19,17 +19,6 @@
 //   return false;
 // };
 
-// O(n) using hash map
-// O(n) space complexity
-// const canSum = (targetSum, numbers) => {
-//   const remainders = {};
-//   for (number of numbers) {
-//     remainders[number] = targetSum - number;
-//     if (remainders[number] in remainders) return true;
-//   }
-//   return false;
-// };
-
 // using recursion
 const canSum = (targetSum, numbers, memo = {}) => {
   if (targetSum in memo) return memo[targetSum];
